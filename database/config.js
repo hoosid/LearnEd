@@ -5,7 +5,7 @@ require('dotenv').config();
 const prisma = new PrismaClient({
   datasources: {
     db: {
-      url: process.env.DATABASE_URL
+      url: process.env.DATABASE_URL // Assurez-vous que DATABASE_URL est correctement défini dans .env
     }
   }
 });
