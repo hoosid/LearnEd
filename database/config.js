@@ -1,25 +1,3 @@
-
-//  const mysql = require('mysql');
-
-// const connection =mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "",
-//     database: "LearnCh",
-//   });
-
-
-// connection.connect(function(err) {
-//     if (err){
-//       console.log(err);
-//       //throw err;
-//     } else {
-//       console.log('DB connected :)');
-//     }
-// });
-
-// module.exports = connection;
-// const mysql = require('mysql');
 const { PrismaClient } = require('@prisma/client');
 require('dotenv').config();
 
@@ -39,6 +17,7 @@ prisma.$connect()
   })
   .catch((error) => {
     console.error('DB connection failed:', error);
+    process.exit(1); // Quitte le processus avec un code d'erreur
   });
 
 module.exports = prisma;
